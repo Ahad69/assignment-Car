@@ -1,0 +1,43 @@
+.banner img{
+    height: 500px;
+}
+.banner{
+    position: relative;
+}
+.caption{
+    padding: 20px;
+    text-align: left;
+   position: absolute;
+   top: -400px;
+  left: -100px;
+}
+.caption h1{
+    color: orange;
+    font-size: 80px;
+    font-weight: bold;
+}
+.second-caption{
+    color: white;
+}
+.caption h3{
+    font-family: cursive;
+    font-size: 40px;
+}
+.caption p {
+    font-weight: bold;
+    font-size: 20px;
+}
+span{
+    font-weight: bold;
+    color: orange;
+}
+@media screen and (max-width:768px) {
+    .caption{
+       
+       top: -400px;
+      left: -50px;
+    }
+    .caption h1{
+        font-size: 40px;
+    }
+}
