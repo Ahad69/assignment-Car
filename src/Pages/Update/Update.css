@@ -1,0 +1,56 @@
+.update-Details{
+    background: linear-gradient(to right ,rgba(183, 242, 248, 0.623) , rgba(225, 157, 252, 0.377)) ;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    padding: 10%;
+}
+.update-container{
+    text-align: left;
+    width: 100%;
+    display: flex;
+    background: red;
+    border-radius: 50px;
+    background: #ffffff;
+    box-shadow:  41px 41px 82px #e6e4e4,
+             -41px -41px 82px #ffffff;
+}
+.update-container img{
+    width: 40%;
+    border-radius: 50px;
+    height: 400px;
+    padding: 30px;
+}
+.update-bio{
+    padding: 30px;
+}
+.update-buttons{
+    display: flex;
+    justify-content: space-between;
+}
+.update-name{
+    color: orange;
+}
+.input{
+    padding: 10px;
+     font-size: 16px;
+     border-radius: 50px;
+}
+@media screen and (max-width:998px){
+    .update-Details{
+        height: 150vh;
+    }
+    .update-container{
+        flex-direction: column;
+    }
+    .update-container img{
+        width: 100%;
+    }
+    .update-buttons{
+        flex-direction: column;
+    }
+    .input{
+        width: 100%;
+    }
+}

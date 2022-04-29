@@ -23,7 +23,7 @@ const Counter = () => {
             </div>
             <div>
             <FontAwesomeIcon className='fs-1 text-white' icon={faUsers} /><br />
-            <CountUp duration={3} className='fs-1 fw-bold text-white' end={100} /> <span className='fs-1 fw-bold text-white'>$</span>
+            <CountUp duration={3} className='fs-1 fw-bold text-white' end={100} /> <span className='fs-1 fw-bold text-white'>%</span>
             <h5 className='text-danger'>Customer Satisfaction</h5>
             </div>
             <div>

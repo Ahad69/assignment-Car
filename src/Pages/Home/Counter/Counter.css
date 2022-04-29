@@ -7,3 +7,10 @@
     grid-template-columns:  1fr 1fr 1fr 1fr;
     padding: 20px;
 }
+@media screen and (max-width:998px){
+    .counter-items{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        grid-gap: 20px;
+    }
+  }
