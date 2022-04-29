@@ -1,15 +1,15 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import "./Update.css";
 
 const Update = () => {
   const { id } = useParams();
   const [item, setItem] = useState([]);
-  const [loading , setLoading] = useState(false)
+
 
   useEffect(()=>{
-    setLoading(true)
+   
     const url = `http://localhost:5000/inventory/${id}`;
 
     axios
@@ -17,16 +17,62 @@ const Update = () => {
       .then(function (response) {
         const myData = response.data;
         setItem(myData);
-        setLoading(false)
+       
       })
       .catch(function (error) {
         console.log(error);
       });
-  },[])
-  
-if(loading){
-    <h1>Loading</h1>
-}
+
+      
+  },[item])
+
+
+  const handleDeleveredDelete = async (event) =>{
+    
+    const newQu = item.quantity;
+    const qunt = ( newQu - 1)
+    
+    const newQuantity = {quantity:qunt}
+
+    const url2 = `http://localhost:5000/inventory/${id}`
+    await fetch( url2, {
+        method : 'PUT',
+        headers:{
+            'content-type' : 'application/json'
+        },
+        body: JSON.stringify(newQuantity)
+    })
+    .then(res => res.json())
+    .then(data => {
+        console.log(data)
+        
+    })
+  }
+
+  const handleSubmit = (event) =>{
+    const quantity = parseInt(event.target.qtn.value);
+    const newQu = item.quantity;
+    const qunt = (quantity + newQu);
+    const newQuantity = {quantity:qunt};
+    // console.log(newQuantity)
+    const url = `http://localhost:5000/inventory/${id}`
+    fetch(url, {
+        method : 'PUT',
+        headers:{
+            'content-type' : 'application/json'
+        },
+        body: JSON.stringify(newQuantity)
+    })
+    .then(res => res.json())
+    .then(data => {
+        alert('user added successfully')
+        if(data.modifiedCount == 1){
+            setItem(newQuantity)
+        }
+        event.target.reset()
+    })
+  }
+
   return (
     <div className="update-Details">
       <div className="update-container">
@@ -38,12 +84,12 @@ if(loading){
             <p>Supplier : {item.supplier}</p>
             <h4 className="text-danger">${item.price}</h4>
             <div className="update-buttons">
-            <button className="show">
+            <button onClick={handleDeleveredDelete} className="show">
             Delivered
             </button>
             <br />
-                <form>
-                <input type="number" placeholder="Input Quantity" className="border-0 input" />
+                <form onSubmit={handleSubmit}>
+                <input type="number" name="qtn" placeholder="Input Quantity" className="border-0 input" />
                 <input className="show input" type="submit" value="Update Quantity" />
                 </form>
             </div>

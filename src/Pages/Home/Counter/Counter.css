@@ -1,6 +1,6 @@
 .counter{
     background: black;
-   
+   text-align: center;
 }
 .counter-items{
     display: grid;
