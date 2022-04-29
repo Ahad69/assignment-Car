@@ -1,8 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const Inventory = ({item}) => {
+const Inventory = ({item , handleDelete}) => {
+
     const {img , name , description , price ,quantity, supplier , _id} = item
+
+    
     return (
         <div className="card border-0 mb-5">
         <div className="card-front">
@@ -33,6 +36,7 @@ const Inventory = ({item}) => {
           <button className="show">
             <Link to={`/inventory/${_id}`} > Update</Link>
           </button>
+          <button onClick={()=>handleDelete(_id)}>Delete</button>
         </div>
       </div>
     );

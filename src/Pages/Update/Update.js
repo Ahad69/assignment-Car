@@ -10,7 +10,7 @@ const Update = () => {
 
   useEffect(()=>{
     setLoading(true)
-    const url = `http://localhost:5000/items/${id}`;
+    const url = `http://localhost:5000/inventory/${id}`;
 
     axios
       .get(url)
