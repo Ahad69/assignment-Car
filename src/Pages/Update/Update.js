@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import "./Update.css";
 
 const Update = () => {
@@ -55,6 +55,7 @@ const Update = () => {
     const qunt = (quantity + newQu);
     const newQuantity = {quantity:qunt};
     // console.log(newQuantity)
+
     const url = `http://localhost:5000/inventory/${id}`
     fetch(url, {
         method : 'PUT',
@@ -65,7 +66,7 @@ const Update = () => {
     })
     .then(res => res.json())
     .then(data => {
-        alert('user added successfully')
+        alert('Quantity successfully added')
         if(data.modifiedCount == 1){
             setItem(newQuantity)
         }
@@ -75,6 +76,17 @@ const Update = () => {
 
   return (
     <div className="update-Details">
+      <div className="update-top">
+        <Link className="text-decoration-none" to="/">
+        ←  Back to Home
+          </Link>
+          
+        <Link className="text-decoration-none" to="/inventory">
+                Manage Inventory →
+          </Link>
+          
+        </div>
+
       <div className="update-container">
         <img src={item.img} alt="" />
         <div className="update-bio">
@@ -84,13 +96,13 @@ const Update = () => {
             <p>Supplier : {item.supplier}</p>
             <h4 className="text-danger">${item.price}</h4>
             <div className="update-buttons">
-            <button onClick={handleDeleveredDelete} className="show">
+            <button onClick={handleDeleveredDelete} className="show-btn">
             Delivered
             </button>
             <br />
                 <form onSubmit={handleSubmit}>
                 <input type="number" name="qtn" placeholder="Input Quantity" className="border-0 input" />
-                <input className="show input" type="submit" value="Update Quantity" />
+                <input className="show-btn" type="submit" value="Update Quantity" />
                 </form>
             </div>
         </div>

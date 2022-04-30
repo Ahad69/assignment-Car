@@ -32,7 +32,7 @@ const Item = ({item}) => {
           <p>Quantity : {quantity}</p>
           <p>Supplier : {supplier}</p>
           <h4>$ {price}</h4>
-          <button className="show">
+          <button className="show-btn">
             <Link to={`/inventory/${_id}`} > Update</Link>
           </button>
         </div>

@@ -1,22 +1,69 @@
+import { signOut } from "firebase/auth";
 import React from "react";
 import { Container, Nav, Navbar } from "react-bootstrap";
+import { useAuthState } from "react-firebase-hooks/auth";
 import { Link } from "react-router-dom";
-import './Header.css'
+import auth from "../../../firebase.init";
+import ActiveLink from "../../Auth/ActiveLink/ActiveLink";
+import "./Header.css";
 
 const Header = () => {
+  const [user, loading, error] = useAuthState(auth);
+  const logout = () => {
+    signOut(auth);
+  };
   return (
     <div>
-      <Navbar collapseOnSelect expand="lg" bg="dark"  variant="dark">
+      <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
         <Container>
-          <Navbar.Brand as={Link} to='/' className="fs-2">Car Corners</Navbar.Brand>
-          <Navbar.Toggle className="text-white" aria-controls="responsive-navbar-nav" />
-          <Navbar.Collapse id="responsive-navbar-nav">
+          <Navbar.Brand as={Link} to="/" className="fs-2">
+            Car Corners
+          </Navbar.Brand>
+          <Navbar.Toggle
+            className="text-white"
+            aria-controls="responsive-navbar-nav"
+          />
+          <Navbar.Collapse id="responsive-navbar-nav" className="text-center">
             <Nav className="me-auto">
-              <Nav.Link  as={Link} className="text-white" to="/inventory">Inventory</Nav.Link>
-              
+              {/* <ActiveLink as={Link} to="/inventory">
+                Inventory
+              </ActiveLink> */}
+              {
+                user?.email ? <>
+                <ActiveLink className="m-2"  as={Link}  to="/add-items">
+                Add Items
+              </ActiveLink>
+                <ActiveLink className="m-2" as={Link} to="/manage-item">
+                  Manage Items
+                </ActiveLink>
+                <ActiveLink className="m-2" as={Link} to="/my-item">
+                  My Items
+                </ActiveLink>
+                </> : ' '
+              }
             </Nav>
             <Nav>
-              <Nav.Link className="text-white" href="#deets">More deets</Nav.Link>
+              {user?.email ? (
+                <>
+                
+                  <img
+                    className="m-auto rounded-circle"
+                    width={50}
+                    src={user?.photoURL}
+                    alt=""
+                  />
+                  <button
+                    className="pt-0 m-0 bg-black border-0 text-white"
+                    onClick={logout}
+                  >
+                    Sign Out
+                  </button>{" "}
+                </>
+              ) : (
+                <Nav.Link as={Link} className="text-white" to="/signin">
+                  Sign In
+                </Nav.Link>
+              )}
             </Nav>
           </Navbar.Collapse>
         </Container>

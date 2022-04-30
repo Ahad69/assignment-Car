@@ -34,10 +34,10 @@ const Inventory = ({item , handleDelete}) => {
           <p>Supplier : {supplier}</p>
           <h4>$ {price}</h4>
           <div className='d-flex justify-content-between'>
-          <button className="show">
+          <button className="show-btn">
             <Link to={`/inventory/${_id}`} > Update</Link>
           </button>
-          <button className="show" onClick={()=>handleDelete(_id)}>Delete</button>
+          <button className="show-btn  text-white" onClick={()=>handleDelete(_id)}>Delete</button>
           </div>
         </div>
       </div>

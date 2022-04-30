@@ -1,0 +1,58 @@
+.sign{
+    background: linear-gradient(to right ,rgba(183, 242, 248, 0.623) , rgba(225, 157, 252, 0.377)) , url(https://wallpaperaccess.com/full/249763.jpg) ;
+    background-position: center ;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding-top: 100px;
+    padding-left: 50px;
+    height: 100vh;
+}
+.sign-container{
+    width: 50%;
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 30px;
+}
+/* .sign-container > form{
+    background: black;
+} */
+.sign-container > form > input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    border: 0;
+    background: lightgray;
+}
+.sign-container > form > input[type="submit"] {
+    background: linear-gradient(to left , rgb(75, 212, 236) , rgb(93, 175, 212));
+    font-size: 20px;
+}
+.sign-buttons{
+    display: flex;
+    justify-content: space-evenly;
+}
+.sign-button:nth-child(1){
+    background: rgba(184, 184, 184, 0.479);
+    padding: 5px 10px;
+    border: 0;
+    border-radius: 20px;
+}
+.sign-button:nth-child(2){
+    background: rgba(63, 95, 238, 0.842);
+    padding: 5px 10px;
+    border: 0;
+    color: #ffffff;
+    border-radius: 20px;
+}
+.sign-button:nth-child(3){
+    background: rgba(7, 7, 7, 0.808);
+    padding: 5px 10px;
+    border: 0;
+    color: #ffffff;
+    border-radius: 20px;
+}
+.loader{
+    /* background: red; */
+    margin: 20% 50%;
+    width: 150px;
+}
