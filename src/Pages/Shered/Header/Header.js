@@ -25,18 +25,16 @@ const Header = () => {
           />
           <Navbar.Collapse id="responsive-navbar-nav" className="text-center">
             <Nav className="me-auto">
-              {/* <ActiveLink as={Link} to="/inventory">
-                Inventory
-              </ActiveLink> */}
+             
               {
                 user?.email ? <>
                 <ActiveLink className="m-2"  as={Link}  to="/add-items">
                 Add Items
               </ActiveLink>
-                <ActiveLink className="m-2" as={Link} to="/manage-item">
+                <ActiveLink className="m-2" as={Link} to="/manage-items">
                   Manage Items
                 </ActiveLink>
-                <ActiveLink className="m-2" as={Link} to="/my-item">
+                <ActiveLink className="m-2" as={Link} to="/my-items">
                   My Items
                 </ActiveLink>
                 </> : ' '
@@ -56,7 +54,7 @@ const Header = () => {
                     className="pt-0 m-0 bg-black border-0 text-white"
                     onClick={logout}
                   >
-                    Sign Out
+                    Log Out
                   </button>{" "}
                 </>
               ) : (

@@ -6,6 +6,7 @@ import SignIn from './Pages/Auth/SignIn/SignIn';
 import SignUp from './Pages/Auth/SignUp/SignUp';
 import Home from './Pages/Home/Home/Home';
 import Inventories from './Pages/Inventories/Inventories/Inventories';
+import MyItems from './Pages/MyItems/MyItems';
 import Header from './Pages/Shered/Header/Header';
 import Update from './Pages/Update/Update';
 
@@ -20,13 +21,24 @@ function App() {
             <Update></Update>
           </RequireAuth>
         }></Route>
-        <Route path='/inventory' element={<Inventories></Inventories>}></Route>
+       
+        <Route path='/add-items' element={
+          <RequireAuth>
+            <AddItems></AddItems>
+          </RequireAuth>
+        }></Route>
+        <Route path='/manage-items' element={
+          <RequireAuth>
+            <Inventories></Inventories>
+          </RequireAuth>
+        }></Route>
         <Route path='/signin' element={<SignIn></SignIn>}></Route>
-        <Route path='/signup' element={<SignUp></SignUp>}></Route>
-        <Route path='/add-items' element={<AddItems></AddItems>}></Route>
-
-        <Route path='/signup' element={<SignUp></SignUp>}></Route>
-
+        <Route path='/my-items' element={
+        <RequireAuth>
+          <MyItems></MyItems> 
+        </RequireAuth>
+        }>
+        </Route>
       </Routes>
     </div>
   );
