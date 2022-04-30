@@ -63,3 +63,8 @@
         width: 100%;
     }
 }
+@media screen and (max-width:998px){
+    .update-top{
+        font-size: 12px;
+    }
+}

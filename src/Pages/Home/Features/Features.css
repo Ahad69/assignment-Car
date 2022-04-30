@@ -1,0 +1,22 @@
+.features{
+   text-align: center;
+   margin: 0 auto;
+}
+.tabList{
+    text-align: center;
+}
+.tabs{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+    
+}
+.tabs img{
+    width: 300px;
+    height: 200px;
+}
+.tab{
+    background: #ffffff;
+    box-shadow:  41px 41px 82px #e6e4e4,
+             -41px -41px 82px #ffffff;
+}

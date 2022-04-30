@@ -56,3 +56,11 @@
     margin: 20% 50%;
     width: 150px;
 }
+@media screen and (max-width:998px){
+    .sign-container{
+        width: 100%;
+    }
+    .sign{
+        padding-left: 0px;
+    }
+}

@@ -7,6 +7,7 @@ import SignUp from './Pages/Auth/SignUp/SignUp';
 import Home from './Pages/Home/Home/Home';
 import Inventories from './Pages/Inventories/Inventories/Inventories';
 import MyItems from './Pages/MyItems/MyItems';
+import NotFound from './Pages/NotFound/NotFound';
 import Header from './Pages/Shered/Header/Header';
 import Update from './Pages/Update/Update';
 
@@ -33,12 +34,14 @@ function App() {
           </RequireAuth>
         }></Route>
         <Route path='/signin' element={<SignIn></SignIn>}></Route>
+        <Route path='/signup' element={<SignUp></SignUp>}></Route>
         <Route path='/my-items' element={
         <RequireAuth>
           <MyItems></MyItems> 
         </RequireAuth>
         }>
         </Route>
+        <Route path='*' element={<NotFound></NotFound>}></Route>
       </Routes>
     </div>
   );

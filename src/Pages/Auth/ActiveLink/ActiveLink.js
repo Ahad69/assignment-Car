@@ -9,7 +9,7 @@ const ActiveLink = ({ children, to, ...props }) => {
   return (
     <div>
       <Link
-        style={{ color : match ? "red" : "white" , textDecoration: match ? "none" : "none"  }}
+        style={{ color : match ? "red" : "black" , textDecoration: match ? "none" : "none"  }}
         to={to}
         {...props}
       >

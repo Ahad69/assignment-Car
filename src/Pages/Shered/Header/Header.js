@@ -14,13 +14,13 @@ const Header = () => {
   };
   return (
     <div>
-      <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+      <Navbar collapseOnSelect expand="lg"  variant="light">
         <Container>
-          <Navbar.Brand as={Link} to="/" className="fs-2">
+          <Navbar.Brand as={Link} to="/" className="fs-2 fw-bold">
             Car Corners
           </Navbar.Brand>
           <Navbar.Toggle
-            className="text-white"
+            className="text-white toggle"
             aria-controls="responsive-navbar-nav"
           />
           <Navbar.Collapse id="responsive-navbar-nav" className="text-center">
@@ -28,13 +28,13 @@ const Header = () => {
              
               {
                 user?.email ? <>
-                <ActiveLink className="m-2"  as={Link}  to="/add-items">
+                <ActiveLink className="m-2 fw-bold"  as={Link}  to="/add-items">
                 Add Items
               </ActiveLink>
-                <ActiveLink className="m-2" as={Link} to="/manage-items">
+                <ActiveLink className="m-2 fw-bold" as={Link} to="/manage-items">
                   Manage Items
                 </ActiveLink>
-                <ActiveLink className="m-2" as={Link} to="/my-items">
+                <ActiveLink className="m-2 fw-bold" as={Link} to="/my-items">
                   My Items
                 </ActiveLink>
                 </> : ' '
@@ -51,7 +51,7 @@ const Header = () => {
                     alt=""
                   />
                   <button
-                    className="pt-0 m-0 bg-black border-0 text-white"
+                    className="pt-0 fw-bold ms-2 bg-white border-0 text-dark"
                     onClick={logout}
                   >
                     Log Out

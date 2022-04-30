@@ -1,8 +1,9 @@
 import React from "react";
-import Header from "../../Shered/Header/Header";
 import Banner from "../Banner/Banner";
 import Counter from "../Counter/Counter";
+import Features from "../Features/Features";
 import Items from "../Items/Items";
+import WhyUs from "../WhyUs/WhyUs";
 
 const Home = () => {
   return (
@@ -10,6 +11,8 @@ const Home = () => {
       <Banner></Banner>
       <Counter></Counter>
       <Items></Items>
+      <WhyUs></WhyUs>
+      <Features></Features>
     </div>
   );
 };

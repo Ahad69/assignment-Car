@@ -83,7 +83,7 @@ const SignIn = () => {
         <input type="submit" value="Sign In" />
       </form>
       <br /> <br />
-      <p>Are u New ? <Link to='/signup'>Click to Register</Link> </p>
+      <p>Are You  New Here ? <Link to='/signup'>Click to Register</Link> </p>
       <div className="sign-buttons">
       
 

@@ -15,7 +15,7 @@ const Items = () => {
           homeItems.map(item => <Item key={item._id} item={item}></Item>)
       }
      </div>
-     <Link className="ms-auto text-decoration-none p-2 " to='/inventory'>Manage Inventory → </Link>
+     <Link className="ms-auto text-decoration-none p-2 " to='/manage-items'>Manage Inventory → </Link>
     </div>
   );
 };

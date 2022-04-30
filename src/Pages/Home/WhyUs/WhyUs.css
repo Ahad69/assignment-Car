@@ -1,0 +1,49 @@
+.whyUs{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.cards{
+    width: 300px;
+    height: 300px;
+    text-align: center;
+}
+.whyUs1{
+    text-align: center;
+    width: 100px;
+    height: 100px;
+    padding-top: 8%;
+    border-radius: 50%;
+    font-size: 40px;
+    background: rgba(223, 96, 96, 0.329);
+}
+
+.whyUs2{
+    text-align: center;
+    width: 100px;
+    height: 100px;
+    padding-top: 5%;
+    font-size: 40px;
+    border-radius: 50%;
+    background: rgba(136, 223, 96, 0.322);
+}
+.whyUs3{
+    text-align: center;
+    padding-top: 5%;
+    font-size: 40px;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: rgba(96, 187, 223, 0.205);
+}
+
+@media screen and (max-width:768px){
+    .whyUs{
+        flex-direction: column;
+        align-items: center;
+    }
+    .whyUs1 , .whyUs2, .whyUs3 {
+        
+        padding-top: 5%;
+    }
+}

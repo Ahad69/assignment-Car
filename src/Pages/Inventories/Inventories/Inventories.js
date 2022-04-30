@@ -67,7 +67,7 @@ const Inventories = () => {
           </Link>
           
         <Link className="text-decoration-none" to="/add-items">
-                Add Item →
+                Add New Item →
           </Link>
           
         </div>
