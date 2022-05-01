@@ -20,3 +20,13 @@
     box-shadow:  41px 41px 82px #e6e4e4,
              -41px -41px 82px #ffffff;
 }
+@media screen and (max-width:998px){
+    .tabs{
+        grid-template-columns: repeat(2 , 1fr);
+    }
+}
+@media screen and (max-width:768px){
+    .tabs{
+        grid-template-columns: repeat(1 , 1fr);
+    }
+}

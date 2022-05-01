@@ -1,4 +1,5 @@
 import { Route, Routes } from 'react-router-dom';
+import { ToastContainer } from 'react-toastify';
 import './App.css';
 import AddItems from './Pages/AddItems/AddItems';
 import RequireAuth from './Pages/Auth/RequireAuth/RequireAuth';
@@ -10,6 +11,7 @@ import MyItems from './Pages/MyItems/MyItems';
 import NotFound from './Pages/NotFound/NotFound';
 import Header from './Pages/Shered/Header/Header';
 import Update from './Pages/Update/Update';
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
   return (
@@ -43,6 +45,7 @@ function App() {
         </Route>
         <Route path='*' element={<NotFound></NotFound>}></Route>
       </Routes>
+      <ToastContainer />
     </div>
   );
 }

@@ -58,7 +58,7 @@ const Header = () => {
                   </button>{" "}
                 </>
               ) : (
-                <Nav.Link as={Link} className="text-white" to="/signin">
+                <Nav.Link as={Link} className="m-2 fw-bold" to="/signin">
                   Sign In
                 </Nav.Link>
               )}

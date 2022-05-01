@@ -2,11 +2,13 @@ import React, { useEffect, useState } from "react";
 import auth from "../../../firebase.init";
 import {
   useAuthState,
+  useSendPasswordResetEmail,
   useSignInWithEmailAndPassword,
   useSignInWithGoogle,
 } from "react-firebase-hooks/auth";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { ScaleLoader } from "react-spinners";
+import { toast } from "react-toastify";
 
 const SignIn = () => {
     
@@ -18,6 +20,8 @@ const SignIn = () => {
       ] = useSignInWithEmailAndPassword(auth);
   const [userAuth, loadingAuth, errorAuth] = useAuthState(auth);
   const [signInWithGoogle, userGoogle, loadingGoogle, errorGoogle] = useSignInWithGoogle(auth);
+  const [sendPasswordResetEmail, sending, PasswordError] =
+  useSendPasswordResetEmail(auth);
 
   const navigate = useNavigate();
   const location = useLocation();
@@ -45,7 +49,17 @@ const SignIn = () => {
    
   };
 
-  
+  const notify = () =>{
+    toast('Reset Link Send to Your Email. Check It ', {
+     position: "top-right",
+     autoClose: 5000,
+     hideProgressBar: false,
+     closeOnClick: true,
+     pauseOnHover: true,
+     draggable: true,
+     progress: undefined,
+     });
+ }
 
 
 
@@ -57,9 +71,9 @@ const SignIn = () => {
     size={150} />
     </div>;
   }
-  if (error || errorAuth ) {
-    alert(error.message);
-  }
+  // if (error || errorAuth ) {
+  //   alert(error.message);
+  // }
 
   return (
     <div className="sign">
@@ -79,11 +93,30 @@ const SignIn = () => {
           onBlur={handlePassword}
           placeholder="Password"
         />
-        <br /><br />
+        <br />
+       
+        <br />
+
         <input type="submit" value="Sign In" />
       </form>
+      <br />
+      {
+          error ? <div className="text-danger">
+          {error.message}
+        </div> : ' '
+      }
+      {
+          errorAuth ? <div className="text-danger">
+            {errorAuth.message}
+          </div> : ' '
+      }
       <br /> <br />
-      <p>Are You  New Here ? <Link to='/signup'>Click to Register</Link> </p>
+
+     <div className="resetAndLink">
+     <p>Are You  New Here ? <Link to='/signup'>Click to Register</Link> </p>
+     <button className="btn" data-bs-toggle="modal" data-bs-target="#exampleModal">Reset Password</button>
+     </div>
+
       <div className="sign-buttons">
       
 
@@ -93,6 +126,42 @@ const SignIn = () => {
           <button className="sign-button"> <img width={20}  src="https://i.ibb.co/F4w97S7/kindpng-2558173.png" alt="" /> GitHub</button>
       </div>
         </div>
+
+         {/* modal  */}
+
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Forgot Password</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+            <input
+              type="text"
+              name="email"
+              onBlur={handleEmail}
+              placeholder="Email"
+            />
+            </div>
+            <div class="modal-footer">
+            <button
+                type="button"
+                className="btn loginBtn"
+                onClick={async () => {
+                  sendPasswordResetEmail(email);
+                  notify();
+                }}
+              >
+                {
+                  sending ? 'Sending Password ' : 'Send Password'
+                }
+                
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };
