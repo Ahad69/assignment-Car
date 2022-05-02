@@ -5,11 +5,19 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import Swal from "sweetalert2";
 import auth from "../../firebase.init";
 import './MyItems.css'
+import { ScaleLoader } from "react-spinners";
 
 const MyItems = () => {
-  const [user, loading, error] = useAuthState(auth);
+  const [user, loadingAuth, error] = useAuthState(auth);
   const [myItem, setMyItem] = useState([]);
+  const [loading, setLoading] = useState(false);
 
+  useEffect(() => {
+    setLoading(true);
+    setTimeout(() => {
+      setLoading(false);
+    }, 1500);
+  }, []);
   useEffect(() => {
     const url = `https://mighty-bastion-19330.herokuapp.com/my-items?email=${user?.email}`;
     fetch(url)
@@ -45,7 +53,13 @@ const MyItems = () => {
   };
 
   return (
-    <div className="mt-5 myItem">
+    <>
+     {loading ? (
+        <div className="loader">
+          <ScaleLoader color="red" size={150} />
+        </div>
+      ) : (
+        <div className="mt-5 myItem">
         <h1 className="text-center mb-4">My Items</h1>
       <Table striped bordered hover variant="light">
         <thead>
@@ -64,9 +78,9 @@ const MyItems = () => {
          <tbody>
             <tr>
               <td>{item.name}</td>
-              <td className="image"> <img width={80} src={item.img} alt="" /> </td>
+              <td className="image"> <img width={80} height={80} src={item.img} alt="" /> </td>
               <td>{item.price}</td>
-              <td>{item.description}</td>
+              <td>{`${item.description.slice(0,50)} ....`}</td>
               <td>{item.quantity}</td>
               <td><button className="border-0 bg-danger p-2 text-white fw-bold" onClick={()=>handleDelete(item._id)}>Delete</button></td>
             </tr>
@@ -74,7 +88,9 @@ const MyItems = () => {
     }
         
       </Table>
-    </div>
+    </div> )}
+    </>
+  
   );
 };
 

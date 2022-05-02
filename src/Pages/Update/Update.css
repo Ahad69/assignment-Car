@@ -63,7 +63,7 @@
         width: 100%;
     }
 }
-@media screen and (max-width:998px){
+@media screen and (max-width:768px){
     .update-top{
         font-size: 12px;
     }

@@ -35,3 +35,16 @@
     margin: auto;
     background: linear-gradient(to left , rgb(75, 212, 236) , rgb(93, 175, 212));
 }
+@media screen and (max-width:998px){
+    .addItems{
+        height: 86vh;
+    }
+    .addItems-container{
+        width:90%;
+    }
+}
+@media screen and (max-width:768px){
+    .addItems{
+        height: 90vh;
+    }
+}

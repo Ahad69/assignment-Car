@@ -1,6 +1,7 @@
 .features{
    text-align: center;
-   margin: 0 auto;
+   /* margin: 0 auto; */
+   margin-bottom: 50px;
 }
 .tabList{
     text-align: center;
@@ -25,8 +26,8 @@ color: orange;
 }
 .tab{
     background: #ffffff;
-    box-shadow:  41px 41px 82px #e6e4e4,
-             -41px -41px 82px #ffffff;
+    box-shadow:  41px 41px 52px #e6e4e4,
+             -41px -41px 52px #ffffff;
 }
 @media screen and (max-width:998px){
     .tabs{

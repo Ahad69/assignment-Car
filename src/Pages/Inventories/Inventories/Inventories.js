@@ -47,46 +47,34 @@ const Inventories = () => {
 
   return (
     <>
-         {
-        loading ? 
+      {loading ? (
         <div className="loader">
-        <ScaleLoader  
-        color= 'red' 
-        size={150}
-        
-         />
-        
+          <ScaleLoader color="red" size={150} />
         </div>
-        :
-       <div className="inventories">
-           
-           <h1 className="text-center ">Our Inventory Items</h1>
-           <div className="update-top container">
-        <Link className="text-decoration-none" to="/">
-        ←  Back to Home
-          </Link>
-          
-        <Link className="text-decoration-none" to="/add-items">
-                Add New Item →
-          </Link>
-          
-        </div>
-            <div className="homeItems  pt-5 container">
-              
-            {items.map((item) => (
-            <Inventory
-              key={item._id}
-              item={item}
-              handleDelete={handleDelete}
-            ></Inventory>
-          ))}
-          </div> 
-       </div>
-        
+      ) : (
+        <div className="inventories">
+          <h1 className="text-center ">Our Inventory Items</h1>
+          <div className="update-top container">
+            <Link className="text-decoration-none" to="/">
+              ← Back to Home
+            </Link>
 
-    }
-      
-    </> 
+            <Link className="text-decoration-none" to="/add-items">
+              Add New Item →
+            </Link>
+          </div>
+          <div className="homeItems  pt-5 container">
+            {items.map((item) => (
+              <Inventory
+                key={item._id}
+                item={item}
+                handleDelete={handleDelete}
+              ></Inventory>
+            ))}
+          </div>
+        </div>
+      )}
+    </>
   );
 };
 

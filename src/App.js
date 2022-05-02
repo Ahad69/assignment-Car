@@ -15,6 +15,7 @@ import "react-toastify/dist/ReactToastify.css";
 import { ScaleLoader } from "react-spinners";
 import { useEffect, useState } from "react";
 import Blogs from "./Pages/Blogs/Blogs";
+import Footer from "./Pages/Shered/Footer/Footer";
 
 function App() {
 
@@ -76,7 +77,9 @@ function App() {
             ></Route>
             <Route path="*" element={<NotFound></NotFound>}></Route>
           </Routes>
+          <Footer></Footer>
         </>
+
       )}
       <ToastContainer />
     </div>
