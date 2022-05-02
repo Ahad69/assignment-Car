@@ -15,7 +15,7 @@ const AddItems = () => {
   } = useForm();
 
   const onSubmit = (data) => {
-    fetch('http://localhost:5000/add-items' , {
+    fetch('https://mighty-bastion-19330.herokuapp.com/add-items' , {
         method: 'POST',
         headers:{
             'content-type' : 'application/json'
@@ -38,7 +38,7 @@ const AddItems = () => {
   return (
     <div className="addItems">
           <h1 className="text-center fw-bold ">Add Item</h1>
-      <div className="addItems-container">
+      <div className="addItems-container pt-5">
     
         <form onSubmit={handleSubmit(onSubmit)}>
           <input placeholder="Name" {...register("name" , { required: true })} />

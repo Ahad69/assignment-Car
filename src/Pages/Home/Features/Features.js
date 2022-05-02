@@ -14,13 +14,13 @@ const Features = () => {
 
   return (
     <div className="features container mt-5">
-        <h1 className="text-danger">Featured </h1>
+        <h1 className="features-title">Featured </h1>
         <p className="w-50 m-auto pb-5 ">You can select you car by filter here. We supplies the most low price rates. You buy our cars at very cheap rate and can save money.</p>
       <Tabs>
         <TabList className="border-0 tabList">
-          <Tab><h4>Popular</h4></Tab>
-          <Tab><h4>Brand New</h4></Tab>
-          <Tab><h4>Used</h4></Tab>
+          <Tab><h5>Popular</h5></Tab>
+          <Tab><h5>Brand New</h5></Tab>
+          <Tab><h5>Used</h5></Tab>
         </TabList>
 
         <TabPanel>
@@ -29,8 +29,9 @@ const Features = () => {
               firstTab.map(tab => 
 
              
-                  <div className="p-2 tab">
+                  <div className="p-2 tab" key={tab._id}>
                   <img src={tab.img} alt="" />
+                  <hr />
                   <h1>{tab.name}</h1>
                   
               </div>)
@@ -43,8 +44,9 @@ const Features = () => {
               secondTab.map(tab => 
 
              
-                  <div className="p-2 tab">
+                  <div className="p-2 tab"  key={tab._id}>
                   <img src={tab.img} alt="" />
+                  <hr />
                   <h1>{tab.name}</h1>
                   
               </div>)
@@ -57,8 +59,9 @@ const Features = () => {
               thirdTab.map(tab => 
 
              
-                  <div className="p-2 tab">
+                  <div className="p-2 tab"  key={tab._id}>
                   <img src={tab.img} alt="" />
+                  <hr />
                   <h1>{tab.name}</h1>
                   
               </div>)

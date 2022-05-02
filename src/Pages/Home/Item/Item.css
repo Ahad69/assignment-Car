@@ -1,9 +1,9 @@
 .card {
-     height: 460px;
+     height: 400px;
      width: 300px;
      border: 0;
      margin: auto;
-    
+     
    }
    
    .card:hover .card-front {
@@ -18,13 +18,29 @@
      padding: 10px;
      font-size: 16px;
      font-weight: bold;
-     border-radius: 20px;
+     border-radius: 10px;
      background: linear-gradient(to left , rgb(75, 212, 236) , rgb(93, 175, 212));
      border: none;
+     margin-bottom:5px ;
    }
+
+   .show-btn2{
+    padding: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 10px;
+    background: rgb(175, 150, 150);
+    border: none;
+    margin-bottom:5px ;
+   }
+
    .show-btn a{
      color: white;
      text-decoration: none;
+   }
+   .show-btn a:hover{
+    color: rgb(236, 236, 236);
+    text-decoration: none;
    }
  
    .card-back {

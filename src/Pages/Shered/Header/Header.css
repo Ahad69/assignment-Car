@@ -1,3 +1,6 @@
 .toggle{
     background: rgba(248, 246, 246, 0.452) !important;
 }
+nav{
+background: linear-gradient(to right ,rgba(183, 242, 248, 0.363) , rgba(225, 157, 252, 0.274)) ;
+}

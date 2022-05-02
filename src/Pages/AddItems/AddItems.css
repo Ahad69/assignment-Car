@@ -1,5 +1,5 @@
 .addItems{
-    background: linear-gradient(to right ,rgba(183, 242, 248, 0.623) , rgba(225, 157, 252, 0.377)) ;
+    background: linear-gradient(to right ,rgba(183, 242, 248, 0.363) , rgba(225, 157, 252, 0.274)) ;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -15,8 +15,8 @@
     background: red;
     border-radius: 50px;
     background: #ffffff;
-    box-shadow:  41px 41px 82px #e6e4e4,
-             -41px -41px 82px #ffffff;
+    box-shadow:  1px 1px 2px #e6e4e4,
+             1px 1px 2px #ffffff;
 }
 .addItems-container > form{
     width: 100%;

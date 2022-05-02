@@ -1,0 +1,9 @@
+.comparison{
+    width: 40px;
+}
+@media screen and (max-width:768px){
+    .comparison{
+        font-size: 12px;
+      display: block;
+    }
+}

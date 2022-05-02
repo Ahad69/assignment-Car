@@ -11,7 +11,7 @@ const Item = ({item}) => {
           <img
             width="300px"
             style={{ borderRadius: "20px" }}
-            height="460px"
+            height="400px"
             src={img}
             alt=""
           />
@@ -32,7 +32,7 @@ const Item = ({item}) => {
           <p>Quantity : {quantity}</p>
           <p>Supplier : {supplier}</p>
           <h4>$ {price}</h4>
-          <button className="show-btn">
+          <button className="show-btn ps-3 pe-3">
             <Link to={`/inventory/${_id}`} > Update</Link>
           </button>
         </div>

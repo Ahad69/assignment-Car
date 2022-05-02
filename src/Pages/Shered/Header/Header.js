@@ -14,7 +14,7 @@ const Header = () => {
   };
   return (
     <div>
-      <Navbar collapseOnSelect expand="lg"  variant="light">
+      <Navbar collapseOnSelect expand="lg" className="nav"  variant="light">
         <Container>
           <Navbar.Brand as={Link} to="/" className="fs-2 fw-bold">
             Car Corners
@@ -37,6 +37,9 @@ const Header = () => {
                 <ActiveLink className="m-2 fw-bold" as={Link} to="/my-items">
                   My Items
                 </ActiveLink>
+                <ActiveLink className="m-2 fw-bold" as={Link} to="/blog">
+                  Blogs
+                </ActiveLink>
                 </> : ' '
               }
             </Nav>
@@ -51,7 +54,7 @@ const Header = () => {
                     alt=""
                   />
                   <button
-                    className="pt-0 fw-bold ms-2 bg-white border-0 text-dark"
+                    className="pt-0 fw-bold ms-2 btn border-0 text-dark"
                     onClick={logout}
                   >
                     Log Out

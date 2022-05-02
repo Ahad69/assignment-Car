@@ -20,7 +20,7 @@ const Inventories = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        const url = `http://localhost:5000/inventory/${id}`;
+        const url = `https://mighty-bastion-19330.herokuapp.com/inventory/${id}`;
         fetch(url, {
           method: "DELETE",
         })
@@ -58,7 +58,7 @@ const Inventories = () => {
         
         </div>
         :
-       <div>
+       <div className="inventories">
            
            <h1 className="text-center ">Our Inventory Items</h1>
            <div className="update-top container">

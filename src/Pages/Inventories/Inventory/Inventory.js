@@ -12,7 +12,7 @@ const Inventory = ({item , handleDelete}) => {
           <img
             width="300px"
             style={{ borderRadius: "20px" }}
-            height="460px"
+            height="400px"
             src={img}
             alt=""
           />
@@ -37,7 +37,7 @@ const Inventory = ({item , handleDelete}) => {
           <button className="show-btn">
             <Link to={`/inventory/${_id}`} > Update</Link>
           </button>
-          <button className="show-btn  text-white" onClick={()=>handleDelete(_id)}>Delete</button>
+          <button className="show-btn2  ms-3 text-white" onClick={()=>handleDelete(_id)}>Delete</button>
           </div>
         </div>
       </div>

@@ -4,13 +4,14 @@ import { Table } from "react-bootstrap";
 import { useAuthState } from "react-firebase-hooks/auth";
 import Swal from "sweetalert2";
 import auth from "../../firebase.init";
+import './MyItems.css'
 
 const MyItems = () => {
   const [user, loading, error] = useAuthState(auth);
   const [myItem, setMyItem] = useState([]);
 
   useEffect(() => {
-    const url = `http://localhost:5000/my-items?email=${user?.email}`;
+    const url = `https://mighty-bastion-19330.herokuapp.com/my-items?email=${user?.email}`;
     fetch(url)
       .then((res) => res.json())
       .then((data) => setMyItem(data));
@@ -27,7 +28,7 @@ const MyItems = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        const url = `http://localhost:5000/inventory/${id}`;
+        const url = `https://mighty-bastion-19330.herokuapp.com/inventory/${id}`;
         fetch(url, {
           method: "DELETE",
         })
@@ -44,14 +45,14 @@ const MyItems = () => {
   };
 
   return (
-    <div className="mt-5">
+    <div className="mt-5 myItem">
         <h1 className="text-center mb-4">My Items</h1>
       <Table striped bordered hover variant="light">
         <thead>
           <tr>
            
             <th>Name</th>
-            <th>Name</th>
+            <th className="image">Image</th>
             <th>Price</th>
             <th>Description</th>
             <th>Quantity</th>
@@ -63,11 +64,11 @@ const MyItems = () => {
          <tbody>
             <tr>
               <td>{item.name}</td>
-              <td> <img width={80} src={item.img} alt="" /> </td>
+              <td className="image"> <img width={80} src={item.img} alt="" /> </td>
               <td>{item.price}</td>
               <td>{item.description}</td>
               <td>{item.quantity}</td>
-              <td><button onClick={()=>handleDelete(item._id)}>Delete</button></td>
+              <td><button className="border-0 bg-danger p-2 text-white fw-bold" onClick={()=>handleDelete(item._id)}>Delete</button></td>
             </tr>
           </tbody>)
     }

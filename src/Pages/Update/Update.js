@@ -10,7 +10,7 @@ const Update = () => {
 
   useEffect(()=>{
    
-    const url = `http://localhost:5000/inventory/${id}`;
+    const url = `https://mighty-bastion-19330.herokuapp.com/inventory/${id}`;
 
     axios
       .get(url)
@@ -34,7 +34,7 @@ const Update = () => {
     
     const newQuantity = {quantity:qunt}
 
-    const url2 = `http://localhost:5000/inventory/${id}`
+    const url2 = `https://mighty-bastion-19330.herokuapp.com/inventory/${id}`
     await fetch( url2, {
         method : 'PUT',
         headers:{
@@ -56,7 +56,7 @@ const Update = () => {
     const newQuantity = {quantity:qunt};
     // console.log(newQuantity)
 
-    const url = `http://localhost:5000/inventory/${id}`
+    const url = `https://mighty-bastion-19330.herokuapp.com/inventory/${id}`
     fetch(url, {
         method : 'PUT',
         headers:{
