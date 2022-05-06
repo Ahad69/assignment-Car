@@ -1,4 +1,3 @@
-import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Table } from "react-bootstrap";
 import { useAuthState } from "react-firebase-hooks/auth";
@@ -6,6 +5,7 @@ import Swal from "sweetalert2";
 import auth from "../../firebase.init";
 import './MyItems.css'
 import { ScaleLoader } from "react-spinners";
+import axios from "axios";
 
 const MyItems = () => {
   const [user, loadingAuth, error] = useAuthState(auth);
@@ -18,12 +18,30 @@ const MyItems = () => {
       setLoading(false);
     }, 1500);
   }, []);
+
+
   useEffect(() => {
-    const url = `https://mighty-bastion-19330.herokuapp.com/my-items?email=${user?.email}`;
-    fetch(url)
-      .then((res) => res.json())
-      .then((data) => setMyItem(data));
+
+    // const url = `https://mighty-bastion-19330.herokuapp.com/my-items?email=${user?.email}`;
+    // fetch(url)
+    //   .then((res) => res.json())
+    //   .then((data) => setMyItem(data));
+
+    const getUserByEmail = async() =>{
+      const email = user?.email ;
+      const url = `https://mighty-bastion-19330.herokuapp.com/my-items?email=${email}`;
+      
+      const {data} = await axios.get(url , {
+        headers :{
+          authorization : `Bearer ${localStorage.getItem('accessToken')}`
+        }
+      });
+      setMyItem(data)
+    }
+    getUserByEmail()
+
   }, [myItem]);
+
 
   const handleDelete = (id) => {
     Swal.fire({

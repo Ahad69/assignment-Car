@@ -9,6 +9,11 @@ import {
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { ScaleLoader } from "react-spinners";
 import { toast } from "react-toastify";
+import axios from "axios";
+
+
+
+
 
 const SignIn = () => {
     
@@ -46,7 +51,11 @@ const SignIn = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     await signInWithEmailAndPassword(email, password);
-   
+    const {data} =  await axios.post('http://localhost:5000/signin' , {email});
+
+    localStorage.setItem('accessToken' , data.accessToken)
+    // console.log(data)
+    // navigate(location.state?.from?.pathname || "/")
   };
 
   const notify = () =>{
@@ -127,16 +136,14 @@ const SignIn = () => {
       </div>
         </div>
 
-         {/* modal  */}
-
-        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">Forgot Password</h5>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        <div className="modal fade" id="exampleModal" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div className="modal-dialog">
+          <div className="modal-content">
+            <div className="modal-header">
+              <h5 className="modal-title" id="exampleModalLabel">Modal title</h5>
+              <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <div class="modal-body">
+            <div className="modal-body">
             <input
               type="text"
               name="email"
@@ -144,7 +151,7 @@ const SignIn = () => {
               placeholder="Email"
             />
             </div>
-            <div class="modal-footer">
+            <div className="modal-footer">
             <button
                 type="button"
                 className="btn loginBtn"
@@ -158,11 +165,13 @@ const SignIn = () => {
                 }
                 
               </button>
+              
             </div>
           </div>
         </div>
       </div>
-    </div>
+      </div>
+    
   );
 };
 

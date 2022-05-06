@@ -54,7 +54,7 @@ const Update = () => {
     const newQu = item.quantity;
     const qunt = (quantity + newQu);
     const newQuantity = {quantity:qunt};
-    // console.log(newQuantity)
+    console.log(newQuantity)
 
     const url = `https://mighty-bastion-19330.herokuapp.com/inventory/${id}`
     fetch(url, {
@@ -66,10 +66,7 @@ const Update = () => {
     })
     .then(res => res.json())
     .then(data => {
-        alert('Quantity successfully added')
-        if(data.modifiedCount == 1){
-            setItem(newQuantity)
-        }
+      console.log(data)
         event.target.reset()
     })
   }
@@ -81,7 +78,7 @@ const Update = () => {
         ←  Back to Home
           </Link>
           
-        <Link className="text-decoration-none" to="/inventory">
+        <Link className="text-decoration-none" to="/manage-items">
                 Manage Inventory →
           </Link>
           
