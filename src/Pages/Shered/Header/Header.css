@@ -4,6 +4,29 @@
 nav{
 background: linear-gradient(to right ,rgba(183, 242, 248, 0.363) , rgba(225, 157, 252, 0.274)) ;
 }
+.dropdown-toggle::after{
+    display: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
 .profile{
-    background: linear-gradient(135deg, #f9e900, #ed33b9)
+    margin: 0 !important;
+    padding: 0 !important;
+    border-radius: 50% !important;
+    background: linear-gradient(135deg, #f9e900, #ed33b9);
+}
+.profile2{
+    background: none !important;
+    border: 0 !important;
+}
+.dropdown-menu[data-bs-popper] {
+    text-align: center;
+    top: 118% !important;
+    left: -42px !important;
+    margin-top: 0.125rem;
+   
+}
+.notify{
+    cursor: text;
+    font-size: 10px;
 }

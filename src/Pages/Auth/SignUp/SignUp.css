@@ -73,20 +73,14 @@
     display: flex;
     justify-content: space-between;
 }
-.password{
-    position: relative;
-}
-.eyeIcon{
-    position: absolute;
-    right: 52%;
-    top: 57%;
-}
+
 .field-icon {
     float: right;
-    margin-left: -55px;
+    margin-left: -45px;
     margin-top: 18px;
     position: absolute;
     z-index: 2;
+    color: #8f8f8f;
 }
 
 @media screen and (max-width:998px){

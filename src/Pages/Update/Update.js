@@ -90,7 +90,7 @@ const Update = () => {
         <div className="update-bio">
           <h1 className="update-name">{item.name}</h1>
           <p className="update-text">{item.description}</p>
-          <p>Quantity : {item.quantity}</p>
+          <p>Quantity : <span className="text-danger">{item.quantity}</span></p>
             <p>Supplier : {item.supplier}</p>
             <h4 className="text-danger">${item.price}</h4>
             <div className="update-buttons">

@@ -96,7 +96,7 @@ const MyItems = () => {
          <tbody key={item._id}>
             <tr>
               <td>{item.name}</td>
-              <td className="image"> <img width={80} height={80} src={item.img} alt="" /> </td>
+              <td className="image"> <img className="rounded-circle" width={80}  height={80} src={item.img} alt="" /> </td>
               <td>{item.price}</td>
               <td>{`${item.description.slice(0,50)} ....`}</td>
               <td>{item.quantity}</td>
