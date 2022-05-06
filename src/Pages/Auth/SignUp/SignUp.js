@@ -34,11 +34,12 @@ const SignUp = () => {
     }
   });
 
+ 
   const [displayName, setDisplayName] = useState("");
   const [email, setEmail] = useState("");
   const [photoURL, setPhotoURL] = useState("");
   const [password, setPassword] = useState("");
-  
+  const [showPassword , setShowPass] = useState(false)
 
   const handleName = (event) => {
     setDisplayName(event.target.value);
@@ -108,14 +109,16 @@ const SignUp = () => {
         />
         <br /><br />
         <input
-          type="password"
+        style={{position:'relative'}}
+         type={showPassword ? "text" : 'password'}
           name="password"
           onBlur={handlePassword}
           placeholder="Password"
-
+         
           
         />
-        <FontAwesomeIcon className='fs-1' icon={faEye} />
+        <span onClick={()=> setShowPass(!showPassword)} toggle="#password-field" className="fa fa-fw fa-eye field-icon toggle-password"></span>
+    
         <br /><br />
         <input type="submit" value="Sign Up" />
       </form>

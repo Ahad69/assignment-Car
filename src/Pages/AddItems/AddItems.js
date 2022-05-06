@@ -57,7 +57,7 @@ const AddItems = () => {
           <br /><br />
           {errors.exampleRequired && <span>This field is required</span>}
 
-          <input className="border-0" type="submit" />
+          <input className="border-0" type="submit" value="Add Item" />
         </form>
       </div>
     </div>

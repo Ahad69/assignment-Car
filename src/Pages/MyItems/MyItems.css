@@ -1,4 +1,7 @@
-
+.myItem{
+    
+    height: 77vh;
+}
 @media screen and (max-width:768px){
     .image{
         display: none;

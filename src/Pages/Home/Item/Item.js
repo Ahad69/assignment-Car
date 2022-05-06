@@ -25,11 +25,11 @@ const Item = ({item}) => {
           />
           <div className="bio">
             <h1 className="name">{name}</h1>
-            <p className="text">
+            <p className="text mb-0">
               {`${description.slice(0,100)}...`}
             </p>
           </div>
-          <p>Quantity : {quantity}</p>
+          <p className='mb-0 fw-bold'>Quantity : <span className='text-danger'>{quantity}</span></p>
           <p>Supplier : {supplier}</p>
           <h4>$ {price}</h4>
           <button className="show-btn ps-3 pe-3">

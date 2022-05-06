@@ -27,7 +27,7 @@ const Update = () => {
   },[item])
 
 
-  const handleDeleveredDelete = async (event) =>{
+  const handleDelevered = async (event) =>{
     
     const newQu = item.quantity;
     const qunt = ( newQu - 1)
@@ -49,7 +49,8 @@ const Update = () => {
     })
   }
 
-  const handleSubmit = (event) =>{
+  const handleSubmit = async (event) =>{
+    event.preventDefault()
     const quantity = parseInt(event.target.qtn.value);
     const newQu = item.quantity;
     const qunt = (quantity + newQu);
@@ -57,7 +58,7 @@ const Update = () => {
     console.log(newQuantity)
 
     const url = `https://mighty-bastion-19330.herokuapp.com/inventory/${id}`
-    fetch(url, {
+    await fetch(url, {
         method : 'PUT',
         headers:{
             'content-type' : 'application/json'
@@ -93,7 +94,7 @@ const Update = () => {
             <p>Supplier : {item.supplier}</p>
             <h4 className="text-danger">${item.price}</h4>
             <div className="update-buttons">
-            <button onClick={handleDeleveredDelete} className="show-btn">
+            <button onClick={handleDelevered} className="show-btn">
             Delivered
             </button>
             <br />

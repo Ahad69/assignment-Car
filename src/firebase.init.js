@@ -7,19 +7,19 @@ import {getAuth} from "firebase/auth"
 // Your web app's Firebase configuration
 const firebaseConfig = {
 
-  // apiKey:process.env.REACT_APP_apiKey,
-  // authDomain:process.env.REACT_APP_authDomain,
-  // projectId:process.env.REACT_APP_projectId,
-  // storageBucket:process.env.REACT_APP_storageBucket,
-  // messagingSenderId:process.env.REACT_APP_messagingSenderId,
-  // appId:process.env.REACT_APP_appId
+  apiKey:process.env.REACT_APP_apiKey,
+  authDomain:process.env.REACT_APP_authDomain,
+  projectId:process.env.REACT_APP_projectId,
+  storageBucket:process.env.REACT_APP_storageBucket,
+  messagingSenderId:process.env.REACT_APP_messagingSenderId,
+  appId:process.env.REACT_APP_appId
 
-  apiKey: "AIzaSyDTanLehnmLsluO30M78eBplEY6WpAoSDU",
-  authDomain: "assignment-11-car.firebaseapp.com",
-  projectId: "assignment-11-car",
-  storageBucket: "assignment-11-car.appspot.com",
-  messagingSenderId: "989736318563",
-  appId: "1:989736318563:web:6e5cd642b1fa3143802a56"
+  // apiKey: "AIzaSyDTanLehnmLsluO30M78eBplEY6WpAoSDU",
+  // authDomain: "assignment-11-car.firebaseapp.com",
+  // projectId: "assignment-11-car",
+  // storageBucket: "assignment-11-car.appspot.com",
+  // messagingSenderId: "989736318563",
+  // appId: "1:989736318563:web:6e5cd642b1fa3143802a56"
   
 };
 

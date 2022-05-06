@@ -47,14 +47,14 @@ const SignIn = () => {
   const handlePassword = (event) => {
     setPassword(event.target.value);
   };
-
+  const [showPassword , setShowPass] = useState(false)
   const handleSubmit = async (event) => {
     event.preventDefault();
     await signInWithEmailAndPassword(email, password);
-    const {data} =  await axios.post('http://localhost:5000/signin' , {email});
+    const {data} =  await axios.post('https://mighty-bastion-19330.herokuapp.com/signin' , {email});
 
     localStorage.setItem('accessToken' , data.accessToken)
-    // console.log(data)
+    // console.log(data , email)
     // navigate(location.state?.from?.pathname || "/")
   };
 
@@ -97,11 +97,13 @@ const SignIn = () => {
         />
         <br /><br />
         <input
-          type="password"
+         style={{position:'relative'}}
+         type={showPassword ? "text" : 'password'}
           name="password"
           onBlur={handlePassword}
           placeholder="Password"
         />
+         <span onClick={()=> setShowPass(!showPassword)} toggle="#password-field" className="fa fa-fw fa-eye field-icon toggle-password"></span>
         <br />
        
         <br />

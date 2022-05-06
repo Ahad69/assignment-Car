@@ -5,7 +5,7 @@
     background-repeat: no-repeat;
     padding-top: 100px;
     padding-left: 50px;
-    height: 100vh;
+    height: 90vh;
 }
 .sign-container{
     width: 50%;
@@ -72,16 +72,41 @@
     display: flex;
     justify-content: space-between;
 }
+.password{
+    position: relative;
+}
+.eyeIcon{
+    position: absolute;
+    right: 52%;
+    top: 57%;
+}
+.field-icon {
+    float: right;
+    margin-left: -55px;
+    margin-top: 18px;
+    position: absolute;
+    z-index: 2;
+}
+
 @media screen and (max-width:998px){
     .sign-container{
         width: 100%;
     }
     .sign{
         padding-left: 0px;
+       height: 85vh;
     }
 }
 @media screen and (max-width:768px){
+    .sign{
+        height: 90vh;
+    }
     .resetAndLink{
         flex-direction: column;
+    }
+    .eyeIcon{
+        position: absolute;
+        right: 52%;
+        top: 57%;
     }
 }

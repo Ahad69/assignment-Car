@@ -4,3 +4,6 @@
 nav{
 background: linear-gradient(to right ,rgba(183, 242, 248, 0.363) , rgba(225, 157, 252, 0.274)) ;
 }
+.profile{
+    background: linear-gradient(135deg, #f9e900, #ed33b9)
+}

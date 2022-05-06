@@ -18,19 +18,19 @@ const Inventory = ({item , handleDelete}) => {
           />
         </div>
 
-        <div className="card-back">
+        <div className="card-back pt-1">
           <img
             src={img}
             alt=""
-            className="profil-picture"
+            className="profil-picture "
           />
           <div className="bio">
             <h1 className="name">{name}</h1>
-            <p className="text">
+            <p className="text mb-0">
               {`${description.slice(0,100)}...`}
             </p>
           </div>
-          <p>Quantity : {quantity}</p>
+          <p className='mb-0 fw-bold'>Quantity : <span className='text-danger'>{quantity}</span></p>
           <p>Supplier : {supplier}</p>
           <h4>$ {price}</h4>
           <div className='d-flex justify-content-between'>

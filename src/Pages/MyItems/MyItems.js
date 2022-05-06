@@ -30,7 +30,7 @@ const MyItems = () => {
     const getUserByEmail = async() =>{
       const email = user?.email ;
       const url = `https://mighty-bastion-19330.herokuapp.com/my-items?email=${email}`;
-      
+     
       const {data} = await axios.get(url , {
         headers :{
           authorization : `Bearer ${localStorage.getItem('accessToken')}`
@@ -77,7 +77,7 @@ const MyItems = () => {
           <ScaleLoader color="red" size={150} />
         </div>
       ) : (
-        <div className="mt-5 myItem">
+        <div className="mt-5 myItem container">
         <h1 className="text-center mb-4">My Items</h1>
       <Table striped bordered hover variant="light">
         <thead>
@@ -93,7 +93,7 @@ const MyItems = () => {
         </thead>
     {
         myItem.map(item =>
-         <tbody>
+         <tbody key={item._id}>
             <tr>
               <td>{item.name}</td>
               <td className="image"> <img width={80} height={80} src={item.img} alt="" /> </td>
