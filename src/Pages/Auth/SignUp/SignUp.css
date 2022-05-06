@@ -1,11 +1,12 @@
 .sign{
     background: linear-gradient(to right ,rgba(183, 242, 248, 0.623) , rgba(225, 157, 252, 0.377)) , url(https://wallpaperaccess.com/full/249763.jpg) ;
-    background-position: center ;
+    background-position: bottom ;
     background-size: cover;
     background-repeat: no-repeat;
     padding-top: 100px;
     padding-left: 50px;
-    height: 90vh;
+    height: 80vh;
+ 
 }
 .sign-container{
     width: 50%;
@@ -94,12 +95,13 @@
     }
     .sign{
         padding-left: 0px;
-       height: 85vh;
+       
     }
 }
 @media screen and (max-width:768px){
     .sign{
-        height: 90vh;
+    
+        padding-top: 20px;
     }
     .resetAndLink{
         flex-direction: column;
@@ -108,5 +110,10 @@
         position: absolute;
         right: 52%;
         top: 57%;
+    }
+}
+@media screen and (max-width:375px){
+    .sign{
+        height: 100vh;
     }
 }

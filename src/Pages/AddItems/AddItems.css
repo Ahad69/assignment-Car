@@ -44,6 +44,11 @@
     }
 }
 @media screen and (max-width:768px){
+    .addItems-container > form > input , textarea{
+        padding: 5px;
+        font-size: 16px;
+       
+    }
     .addItems{
         height: 90vh;
     }
