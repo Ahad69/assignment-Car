@@ -2,6 +2,8 @@
 
 ## Feature and functionality 
 
+• Profile Edit system.
+
 • Backgroud Video.
 
 • Automated Text Writing.
