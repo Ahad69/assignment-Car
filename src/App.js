@@ -16,6 +16,7 @@ import { ScaleLoader } from "react-spinners";
 import { useEffect, useState } from "react";
 import Blogs from "./Pages/Blogs/Blogs";
 import Footer from "./Pages/Shered/Footer/Footer";
+import Profile from "./Pages/Profile/Profile";
 
 function App() {
 
@@ -44,6 +45,14 @@ function App() {
               element={
                 <RequireAuth>
                   <Update></Update>
+                </RequireAuth>
+              }
+            ></Route>
+            <Route
+              path="/profile"
+              element={
+                <RequireAuth>
+                  <Profile></Profile>
                 </RequireAuth>
               }
             ></Route>

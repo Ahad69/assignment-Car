@@ -63,14 +63,14 @@ const Header = () => {
                     src={user?.photoURL}
                     alt=""
                   />
-                  <span class="position-absolute top-0 start-50 ms-2  p-1 bg-success border border-success rounded-circle">
+                  <span className="position-absolute top-0 start-50 ms-2  p-1 bg-success border border-success rounded-circle">
                     
                     </span>
                 </Dropdown.Toggle>
 
                 <Dropdown.Menu>
                 
-                  <Dropdown.Item><ActiveLink className="m-2 fw-bold" as={Link} to="/my-ite">
+                  <Dropdown.Item><ActiveLink className="m-2 fw-bold" as={Link} to="/profile">
                   Profile
                 </ActiveLink></Dropdown.Item>
                   <Dropdown.Item><ActiveLink className="m-2 fw-bold" as={Link} to="/my-item">
@@ -99,17 +99,14 @@ const Header = () => {
                 <Dropdown.Menu>
                 
                   <Dropdown.Item>
-                    <p className="notify"> <strong>Lorem ipsum dolor</strong> <br />  sit
-                      amet consectetur <br />  adipisicing  elit. <br /> Ratione, a.</p>
+                  <p className="notify"> <strong>New Message</strong> <br /> sir , You have got <br />  a new message <br /> from Ahad Hossain </p>
                   </Dropdown.Item>
                   <Dropdown.Item>
-                  <p className="notify"> <strong>Lorem ipsum dolor</strong> <br />  sit
-                      amet consectetur <br />  adipisicing  elit. <br /> Ratione, a.</p>
+                  <p className="notify"> <strong>New Message</strong> <br /> sir , You have got <br />  a new message <br /> from Ahad Hossain </p>
                 </Dropdown.Item>
 
                 <Dropdown.Item> 
-                <p className="notify"> <strong>Lorem ipsum dolor</strong> <br />  sit
-                      amet consectetur <br />  adipisicing  elit. <br /> Ratione, a.</p>
+                <p className="notify"> <strong>New Message</strong> <br /> sir , You have got <br />  a new message <br /> from Ahad Hossain </p>
                 </Dropdown.Item>
                 </Dropdown.Menu>
               </Dropdown>

@@ -20,7 +20,7 @@ const Inventories = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        const url = `https://mighty-bastion-19330.herokuapp.com/inventory/${id}`;
+        const url = `https://gentle-fortress-49395.herokuapp.com/inventory/${id}`;
         fetch(url, {
           method: "DELETE",
         })

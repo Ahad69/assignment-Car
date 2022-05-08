@@ -15,7 +15,7 @@ const AddItems = () => {
   } = useForm();
 
   const onSubmit = (data) => {
-    fetch('https://mighty-bastion-19330.herokuapp.com/add-items' , {
+    fetch('https://gentle-fortress-49395.herokuapp.com/add-items' , {
         method: 'POST',
         headers:{
             'content-type' : 'application/json'

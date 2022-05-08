@@ -51,10 +51,10 @@ const SignIn = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     await signInWithEmailAndPassword(email, password);
-    const {data} =  await axios.post('https://mighty-bastion-19330.herokuapp.com/signin' , {email});
+    const {data} =  await axios.post('https://gentle-fortress-49395.herokuapp.com/signup' , {email});
 
     localStorage.setItem('accessToken' , data.accessToken)
-    // console.log(data , email)
+    console.log(data , email)
     // navigate(location.state?.from?.pathname || "/")
   };
 

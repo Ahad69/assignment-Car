@@ -1,0 +1,19 @@
+.profile-container{
+    background: linear-gradient(to right ,rgba(183, 242, 248, 0.623) , rgba(225, 157, 252, 0.377)) ;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 84vh;
+    padding: 5%;
+}
+.profile-content{
+    text-align: left;
+    width: 100%;
+    padding: 20px;
+    
+    background: red;
+    border-radius: 50px;
+    background: #ffffff;
+    box-shadow:  41px 41px 82px #e6e4e4,
+             -41px -41px 82px #ffffff;
+}

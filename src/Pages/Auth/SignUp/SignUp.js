@@ -14,6 +14,7 @@ import { toast } from "react-toastify";
 
 import { faEye } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import axios from "axios";
 
 const SignUp = () => {
 
@@ -59,6 +60,11 @@ const SignUp = () => {
     event.preventDefault();
     await createUserWithEmailAndPassword(email, password);
     await updateProfile({ displayName, photoURL });
+
+    const {data} =  await axios.post('https://gentle-fortress-49395.herokuapp.com/signup' , {email});
+
+    localStorage.setItem('accessToken' , data.accessToken)
+    console.log(data , email)
     
   };
 

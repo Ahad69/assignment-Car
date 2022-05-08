@@ -22,25 +22,26 @@ const MyItems = () => {
 
   useEffect(() => {
 
-    // const url = `https://mighty-bastion-19330.herokuapp.com/my-items?email=${user?.email}`;
+    // const url = `https://gentle-fortress-49395.herokuapp.com/my-items?email=${user?.email}`;
     // fetch(url)
     //   .then((res) => res.json())
     //   .then((data) => setMyItem(data));
-
+    
     const getUserByEmail = async() =>{
       const email = user?.email ;
-      const url = `https://mighty-bastion-19330.herokuapp.com/my-items?email=${email}`;
+      const url = `https://gentle-fortress-49395.herokuapp.com/my-items?email=${email}`;
      
       const {data} = await axios.get(url , {
         headers :{
           authorization : `Bearer ${localStorage.getItem('accessToken')}`
         }
       });
+      console.log(data)
       setMyItem(data)
     }
     getUserByEmail()
 
-  }, [myItem]);
+  }, [user]);
 
 
   const handleDelete = (id) => {
@@ -54,7 +55,7 @@ const MyItems = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        const url = `https://mighty-bastion-19330.herokuapp.com/inventory/${id}`;
+        const url = `https://gentle-fortress-49395.herokuapp.com/inventory/${id}`;
         fetch(url, {
           method: "DELETE",
         })
@@ -78,7 +79,7 @@ const MyItems = () => {
         </div>
       ) : (
         <div className="mt-5 myItem container">
-        <h1 className="text-center mb-4">My Items</h1>
+        <h1 className="text-center mb-4">My Items ({myItem.length})</h1>
       <Table striped bordered hover variant="light">
         <thead>
           <tr>
