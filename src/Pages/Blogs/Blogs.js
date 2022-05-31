@@ -65,8 +65,8 @@ const Blogs = () => {
       <Table bordered>
         <thead>
           <tr className="text-center fs-3">
-            <th>SQL</th>
-            <th>NoSQL</th>
+            <th>SQL </th>
+            <th>NoSQL </th>
           </tr>
         </thead>
         <tbody>
